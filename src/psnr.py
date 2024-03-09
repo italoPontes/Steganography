@@ -1,6 +1,8 @@
 import numpy as np
 
-def compute_mean_squared_error(image_src: np.ndarray, image_ref: np.ndarray) -> float:
+
+def compute_mean_squared_error(image_src: np.ndarray,
+                               image_ref: np.ndarray) -> float:
     """
     Computes the mean squared error between two images.
 
@@ -9,7 +11,8 @@ def compute_mean_squared_error(image_src: np.ndarray, image_ref: np.ndarray) -> 
         image_ref (numpy.ndarray): Reference image.
 
     Returns:
-        float: The mean squared error between the two images, or -inf if the images have different shapes.
+        float: The mean squared error between the two images,
+        or -inf if the images have different shapes.
     """
     # Check if the images have the same shape
     if image_src.shape != image_ref.shape:
@@ -29,7 +32,8 @@ def compute_psnr(image_src: np.ndarray, image_ref: np.ndarray) -> float:
         image_ref (numpy.ndarray): Reference image.
 
     Returns:
-        float: The PSNR value between the two images, or -inf if the images have different shapes.
+        float: The PSNR value between the two images,
+        or -inf if the images have different shapes.
     """
     # Check if the images have the same shape
     if image_src.shape != image_ref.shape:
