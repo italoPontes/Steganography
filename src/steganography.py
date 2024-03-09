@@ -1,12 +1,30 @@
-import cv2
+""" Module provide a Steganography method for images"""
 import math
+import cv2
 import numpy as np
 
 
 class Steganography:
-    def get_coordinates_from_position(self,
-                                      pixel_position: int() = 0,
-                                      width: int() = 0):
+    """
+    Class create to encode/decode images.
+    """
+    def __init__(self, header_size: int = 32,
+                 depth: int = 3,
+                 pixel_size: int = 8):
+        """
+        Constructor for the Steganography class.
+
+        Args:
+            header_size (int): Size of the header in bits. Default is 32.
+            depth (int): Depth of color channels in the images. Default is 3.
+            pixel_size (int): Size of each pixel in bits. Default is 8.
+        """
+        self.header_size = header_size
+        self.depth = depth
+        self.pixel_size = pixel_size
+
+    def get_coordinates_from_position(self, pixel_position: int = 0,
+                                      width: int = 0):
         """
         Calculates the row and column coordinates from
         pixel position and width.
@@ -27,7 +45,7 @@ class Steganography:
 
         return row, column
 
-    def from_binary_to_decimal(self, binary: str() = '0') -> int:
+    def from_binary_to_decimal(self, binary: str = '0') -> int:
         """
         Converts binary number to decimal integer.
 
@@ -51,8 +69,8 @@ class Steganography:
                 decimal += 2 ** i
         return decimal
 
-    def get_binary(self, pixel_value: int() = 0,
-                   size: int() = 8) -> str:
+    def get_binary(self, pixel_value: int = 0,
+                   size: int = 8) -> str:
         """
         Converts an integer to a binary string representation.
 
@@ -75,8 +93,8 @@ class Steganography:
             return f"{pixel_value:032b}"
         return f"{pixel_value:08b}"
 
-    def modify_last_bit(self, pixel_value: int() = 0,
-                        new_last_bit: int() = 0) -> int():
+    def modify_last_bit(self, pixel_value: int = 0,
+                        new_last_bit: int = 0) -> int:
         """
         Modifies the last bit of a pixel value.
 
@@ -103,7 +121,7 @@ class Steganography:
         output_value = (pixel_value & -2) | (new_last_bit & 1)
         return output_value
 
-    def get_resolution(self, image: np.array([]) = []):
+    def get_resolution(self, image: np.ndarray):
         """
         Calculates the width, height, and resolution of the input image.
 
@@ -118,10 +136,8 @@ class Steganography:
         resolution = height * width
         return width, height, resolution
 
-    def resize_embedded_image(self, embedded_image: np.array([]) = [],
-                              hidden_image: np.array([]) = [],
-                              pixel_size: int() = 8,
-                              header_size: int() = 32):
+    def resize_embedded_image(self, embedded_image: np.ndarray,
+                              hidden_image: np.ndarray) -> np.ndarray:
         """
         Resizes the embedded image if necessary to accommodate
         the hidden image.
@@ -129,8 +145,6 @@ class Steganography:
         Args:
             embedded_image (numpy.array): Image used to hide another image.
             hidden_image (numpy.array): Image to be hidden.
-            pixel_size (int): Size of each pixel in bits.
-            header_size (int): Size of the header in bits.
 
         Returns:
             numpy.array: Resized embedded image if necessary.
@@ -142,7 +156,7 @@ class Steganography:
             self.get_resolution(embedded_image)
         _, _, src_resolution = self.get_resolution(hidden_image)
 
-        total_bits_required = (src_resolution * pixel_size) + header_size
+        total_bits_required = (src_resolution * self.pixel_size) + self.header_size
         proportion_factor = math.ceil(total_bits_required / dst_resolution)
 
         if proportion_factor < 1:
@@ -156,16 +170,14 @@ class Steganography:
 
         return embedded_image_resized
 
-    def embed_header(self, embedded_image: np.array([]) = [],
-                     hidden_image: np.array([]) = [],
-                     header_size: int() = 32):
+    def embed_header(self, embedded_image: np.ndarray,
+                     hidden_image: np.ndarray) -> np.ndarray:
         """
         Embeds information from the hidden image into the embedded image.
 
         Args:
             embedded_image (numpy.array): Image used to hide another image.
             hidden_image (numpy.array): Image to be hidden.
-            header_size (int): Size of the header in bits.
 
         Returns:
             numpy.ndarray: Embedded image with hidden information.
@@ -181,8 +193,8 @@ class Steganography:
 
         # Embed header information
         for dimension, channel in zip([src_height, src_width], [0, 1]):
-            binary_value = self.get_binary(dimension, header_size)
-            for position in range(header_size):
+            binary_value = self.get_binary(dimension, self.header_size)
+            for position in range(self.header_size):
                 bit = int(binary_value[position])
                 # Get coordinates in the embedded image
                 row, column = self.get_coordinates_from_position(position,
@@ -194,19 +206,14 @@ class Steganography:
 
         return embedded_image
 
-    def encode_image(self, hidden_image: np.ndarray([]) = [],
-                     embedded_image: np.ndarray([]) = [],
-                     header_size: int() = 32, depth: int() = 3,
-                     pixel_size: int() = 8):
+    def encode_image(self, hidden_image: np.ndarray,
+                     embedded_image: np.ndarray) -> np.ndarray:
         """
         Encodes the hidden image into the embedded image.
 
         Args:
             hidden_image (numpy.ndarray): Image to be hidden.
             embedded_image (numpy.ndarray): Image used to hide another image.
-            header_size (int): Size of the header in bits.
-            depth (int): Number of color channels in the images.
-            pixel_size (int): Size of each pixel in bits.
 
         Returns:
             numpy.ndarray: Encoded image with hidden information.
@@ -220,17 +227,17 @@ class Steganography:
         dst_width, _, _ = self.get_resolution(embedded_image)
 
         encoded_image = embedded_image.copy()
-        for channel in range(depth):
+        for channel in range(self.depth):
             for pixel_position_src in range(src_resolution):
                 row_src, column_src = \
                     self.get_coordinates_from_position(pixel_position_src,
                                                        src_width)
                 pixel_value_src = hidden_image[row_src, column_src, channel]
-                pixel_value_src = self.get_binary(pixel_value_src, pixel_size)
-                jump_size = (pixel_position_src * pixel_size)
+                pixel_value_src = self.get_binary(pixel_value_src, self.pixel_size)
+                jump_size = pixel_position_src * self.pixel_size
 
-                for bit_position in range(pixel_size):
-                    dst_position = header_size + jump_size + bit_position
+                for bit_position in range(self.pixel_size):
+                    dst_position = self.header_size + jump_size + bit_position
                     row_dst, column_dst = \
                         self.get_coordinates_from_position(dst_position,
                                                            dst_width)
@@ -245,11 +252,8 @@ class Steganography:
                                   channel] = pixel_value_dst
         return encoded_image
 
-    def encode(self, embedded_image: np.array([]) = [],
-               hidden_image: np.array([]) = [],
-               header_size: int() = 32,
-               pixel_size: int() = 8,
-               depth: int() = 3):
+    def encode(self, embedded_image: np.ndarray,
+               hidden_image: np.ndarray):
         """
         Encodes the hidden image into the embedded image.
 
@@ -262,33 +266,25 @@ class Steganography:
         """
         embedded_image = \
             self.resize_embedded_image(embedded_image=embedded_image,
-                                       hidden_image=hidden_image,
-                                       pixel_size=pixel_size,
-                                       header_size=header_size)
+                                       hidden_image=hidden_image)
 
         embedded_image = self.embed_header(embedded_image=embedded_image,
-                                           hidden_image=hidden_image,
-                                           header_size=header_size)
+                                           hidden_image=hidden_image)
 
         encoded_image = self.encode_image(hidden_image=hidden_image,
-                                          embedded_image=embedded_image,
-                                          header_size=header_size,
-                                          depth=depth,
-                                          pixel_size=pixel_size)
+                                          embedded_image=embedded_image)
 
         return encoded_image
 
-    def get_header(self, image: np.array([]) = [],
-                   width: int() = 0,
-                   header_size: int() = 0,
-                   channel: int() = 0):
+    def get_header(self, image: np.ndarray,
+                   width: int = 0,
+                   channel: int = 0):
         """
         Retrieves the header information from the image.
 
         Args:
             image (numpy.ndarray): The input image.
             width (int): The width of the image.
-            header_size (int): The size of the header in bits.
             channel (int): The color channel to extract the
             header information from.
 
@@ -298,7 +294,7 @@ class Steganography:
         if not isinstance(image, np.ndarray):
             raise TypeError("The image must be a numpy array.")
 
-        if header_size <= 0 or header_size > width:
+        if self.header_size <= 0 or self.header_size > width:
             raise ValueError("Header size must be a positive integer"
                              "less than or equal to the width.")
 
@@ -306,7 +302,7 @@ class Steganography:
             raise ValueError("Invalid channel value.")
 
         dimension = ""
-        for position in range(header_size):
+        for position in range(self.header_size):
             row, column = self.get_coordinates_from_position(position, width)
             pixel_value = image[row, column, channel]
             last_bit = str(pixel_value % 2)
@@ -315,13 +311,10 @@ class Steganography:
         dimension = self.from_binary_to_decimal(dimension)
         return dimension
 
-    def get_hidden_image(self, embedded_image: np.array([]) = [],
-                         src_width: int() = 0,
-                         src_height: int() = 0,
-                         dst_width: int() = 0,
-                         depth: int() = 3,
-                         header_size: int() = 0,
-                         pixel_size: int() = 0) -> np.array([]):
+    def get_hidden_image(self, embedded_image: np.ndarray,
+                         src_width: int = 0,
+                         src_height: int = 0,
+                         dst_width: int = 0) -> np.ndarray:
         """
         Retrieves the image channel from the embedded image.
 
@@ -329,9 +322,6 @@ class Steganography:
             src_width (int): The width of the source image.
             src_height (int): The height of the source image.
             dst_width (int): The width of the destination image.
-            depth (int): Number of color channels in the images.
-            header_size (int): Size of the header in bits.
-            pixel_size (int): Size of each pixel in bits.
 
         Returns:
             numpy.ndarray: Image channel extracted from the embedded image.
@@ -340,19 +330,19 @@ class Steganography:
                    param > 0 for param in [src_width,
                                            src_height,
                                            dst_width,
-                                           depth,
-                                           header_size,
-                                           pixel_size]):
+                                           self.depth,
+                                           self.header_size,
+                                           self.pixel_size]):
             raise ValueError("All parameters must be positive integers.")
 
         src_resolution = src_width * src_height
-        image = np.ndarray(shape=(src_height, src_width, depth), dtype=int)
+        image = np.ndarray(shape=(src_height, src_width, self.depth), dtype=int)
 
-        for channel in range(depth):
+        for channel in range(self.depth):
             for pixel_position in range(src_resolution):
-                pixel_position_dst = header_size + (pixel_position*pixel_size)
+                pixel_position_dst = self.header_size + (pixel_position*self.pixel_size)
                 pixel_value_src = ""
-                for pixel_bit in range(pixel_size):
+                for pixel_bit in range(self.pixel_size):
                     pixel_location = pixel_position_dst + pixel_bit
                     dst_row, dst_column = \
                         self.get_coordinates_from_position(pixel_location,
@@ -369,17 +359,12 @@ class Steganography:
 
         return image
 
-    def decode(self, encoded_image: np.array([]) = [],
-               header_size: int() = 32, pixel_size: int() = 8,
-               depth: int() = 3):
+    def decode(self, encoded_image: np.ndarray):
         """
         Decodes the hidden image from the encoded image.
 
         Args:
             encoded_image (numpy.ndarray): Image with hidden information.
-            header_size (int): Size of the header in bits.
-            pixel_size (int): Size of each pixel in bits.
-            depth (int): Number of color channels in the images.
 
         Returns:
             numpy.ndarray: Decoded hidden image.
@@ -387,16 +372,13 @@ class Steganography:
         dst_width = encoded_image.shape[1]
 
         src_height = self.get_header(encoded_image, dst_width,
-                                     header_size, channel=0)
+                                     self.header_size, channel=0)
 
         src_width = self.get_header(encoded_image, dst_width,
-                                    header_size, channel=1)
+                                    self.header_size, channel=1)
 
         output_image = self.get_hidden_image(embedded_image=encoded_image,
                                              src_width=src_width,
                                              src_height=src_height,
-                                             dst_width=dst_width,
-                                             depth=depth,
-                                             header_size=header_size,
-                                             pixel_size=pixel_size)
+                                             dst_width=dst_width)
         return output_image
