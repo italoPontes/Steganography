@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-03-14T14:17:05.727Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="Ha5frlWvYCTb9OgYqqz7" version="24.0.2" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2024-03-14T14:18:37.840Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="VtZACIhQnd8j1-XHmPA_" version="24.0.2" type="github" pages="4">
   <diagram name="Bits Variations - Colors" id="nwh_sp2lMPmeImBYV837">
     <mxGraphModel dx="1127" dy="1119" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -86,7 +86,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="Z8acJvdjgmxr4d4tiM_B" name="Encode">
-    <mxGraphModel dx="376" dy="373" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="451" dy="448" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -100,13 +100,13 @@
           <mxGeometry x="414.63" y="516.87" width="306" height="75" as="geometry" />
         </mxCell>
         <mxCell id="ohZOU1tZnOyDPUVRqSL8-246" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#000066;strokeColor=none;opacity=40;" vertex="1" parent="1">
-          <mxGeometry x="414.21999999999997" y="516.87" width="304.41" height="75" as="geometry" />
+          <mxGeometry x="414.21999999999997" y="515.87" width="307" height="76" as="geometry" />
         </mxCell>
         <mxCell id="ohZOU1tZnOyDPUVRqSL8-243" value="&#39;" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;imageAspect=0;image=https://img.freepik.com/vetores-premium/mantenha-se-positivo-emoji-elemento-de-design-desenhado-a-mao-rosto-sorridente-doodle-simbolo-amarelo-sorriso-emoticon-rabisco-adesivo-de-rosto-feliz_642540-791.jpg;clipPath=inset(12.33% 10.67% 68.67% 11.33%);" vertex="1" parent="1">
           <mxGeometry x="397" y="553.04" width="306" height="75" as="geometry" />
         </mxCell>
         <mxCell id="ohZOU1tZnOyDPUVRqSL8-245" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#006600;strokeColor=none;opacity=40;" vertex="1" parent="1">
-          <mxGeometry x="396.63" y="553.04" width="307" height="75" as="geometry" />
+          <mxGeometry x="396.63" y="552.04" width="307" height="76" as="geometry" />
         </mxCell>
         <mxCell id="ohZOU1tZnOyDPUVRqSL8-214" value="&lt;div style=&quot;font-size: 16px;&quot;&gt;&lt;font data-font-src=&quot;https://fonts.googleapis.com/css?family=Comic+Neue&quot; face=&quot;Comic Neue&quot;&gt;Resize Cover Image based on&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;&lt;font data-font-src=&quot;https://fonts.googleapis.com/css?family=Comic+Neue&quot; face=&quot;Comic Neue&quot;&gt;Base Image Dimensions&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#007eb9;align=center;verticalAlign=top;shadow=0;textShadow=0;glass=0;arcSize=3;opacity=40;" vertex="1" parent="1">
           <mxGeometry x="93" y="60" width="250" height="390" as="geometry" />
@@ -791,7 +791,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="ohZOU1tZnOyDPUVRqSL8-383" value="" style="shape=table;startSize=0;container=1;collapsible=0;childLayout=tableLayout;fontSize=16;fillColor=none;strokeColor=#FFFFFF;strokeWidth=1;" vertex="1" parent="1">
-          <mxGeometry x="368.38" y="592.69" width="240" height="20" as="geometry" />
+          <mxGeometry x="368.38" y="591.69" width="240" height="20" as="geometry" />
         </mxCell>
         <mxCell id="ohZOU1tZnOyDPUVRqSL8-384" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" vertex="1" parent="ohZOU1tZnOyDPUVRqSL8-383">
           <mxGeometry width="240" height="20" as="geometry" />
@@ -863,7 +863,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="ohZOU1tZnOyDPUVRqSL8-407" value="" style="shape=table;startSize=0;container=1;collapsible=0;childLayout=tableLayout;fontSize=16;fillColor=none;strokeColor=#FFFFFF;strokeWidth=1;" vertex="1" parent="1">
-          <mxGeometry x="414.21999999999997" y="516.8700000000001" width="240" height="20" as="geometry" />
+          <mxGeometry x="414.21999999999997" y="515.8700000000001" width="240" height="20" as="geometry" />
         </mxCell>
         <mxCell id="ohZOU1tZnOyDPUVRqSL8-408" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" vertex="1" parent="ohZOU1tZnOyDPUVRqSL8-407">
           <mxGeometry width="240" height="20" as="geometry" />
@@ -932,7 +932,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="ipzYsLfNhAU-Et8Dmtk0" name="Decode">
-    <mxGraphModel dx="376" dy="373" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1127" dy="1119" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1202,13 +1202,13 @@
           <mxGeometry x="345.75" y="695" width="306" height="75" as="geometry" />
         </mxCell>
         <mxCell id="fvUv_iqravNUUe2Xi6RJ-3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#000066;strokeColor=none;opacity=40;" vertex="1" parent="1">
-          <mxGeometry x="345.75" y="695" width="306" height="75" as="geometry" />
+          <mxGeometry x="345.75" y="694" width="306" height="76" as="geometry" />
         </mxCell>
         <mxCell id="fvUv_iqravNUUe2Xi6RJ-4" value="&#39;" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;imageAspect=0;image=https://img.freepik.com/vetores-premium/mantenha-se-positivo-emoji-elemento-de-design-desenhado-a-mao-rosto-sorridente-doodle-simbolo-amarelo-sorriso-emoticon-rabisco-adesivo-de-rosto-feliz_642540-791.jpg;clipPath=inset(12.33% 10.67% 68.67% 11.33%);" vertex="1" parent="1">
           <mxGeometry x="328.12" y="731.17" width="306" height="75" as="geometry" />
         </mxCell>
         <mxCell id="fvUv_iqravNUUe2Xi6RJ-5" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#006600;strokeColor=none;opacity=40;" vertex="1" parent="1">
-          <mxGeometry x="327.75" y="731.17" width="306" height="75" as="geometry" />
+          <mxGeometry x="327.75" y="730.17" width="306" height="76" as="geometry" />
         </mxCell>
         <mxCell id="fvUv_iqravNUUe2Xi6RJ-17" value="&#xa;" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/2/2b/Monalisa_modified210209.jpg;clipPath=inset(5.11% 44.67% 81.11% 27%);" vertex="1" parent="1">
           <mxGeometry x="296" y="485.00000000000006" width="275" height="100" as="geometry" />
@@ -1444,7 +1444,7 @@
           <mxGeometry x="300" y="770" width="306" height="75" as="geometry" />
         </mxCell>
         <mxCell id="fvUv_iqravNUUe2Xi6RJ-68" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CC0000;strokeColor=none;opacity=40;" vertex="1" parent="1">
-          <mxGeometry x="299.5" y="770" width="306" height="75" as="geometry" />
+          <mxGeometry x="299.5" y="769" width="306" height="76" as="geometry" />
         </mxCell>
         <mxCell id="fvUv_iqravNUUe2Xi6RJ-69" value="" style="shape=table;startSize=0;container=1;collapsible=0;childLayout=tableLayout;fontSize=16;fillColor=none;strokeColor=#FFFFFF;" vertex="1" parent="1">
           <mxGeometry x="296" y="484.66000000000014" width="260" height="20" as="geometry" />
