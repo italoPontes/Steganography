@@ -1,3 +1,8 @@
+"""
+This module provides a class to calculate the
+Peak Signal-to-Noise Ratio (PSNR) for comparing the
+quality of two images.
+"""
 import numpy as np
 
 
