@@ -156,7 +156,8 @@ class Steganography:
             self.get_resolution(embedded_image)
         _, _, src_resolution = self.get_resolution(hidden_image)
 
-        total_bits_required = (src_resolution * self.pixel_size) + self.header_size
+        total_bits_required = src_resolution * self.pixel_size
+        total_bits_required += self.header_size
         proportion_factor = math.ceil(total_bits_required / dst_resolution)
 
         if proportion_factor < 1:
@@ -184,8 +185,8 @@ class Steganography:
         """
         if not isinstance(embedded_image, np.ndarray) or \
            not isinstance(hidden_image, np.ndarray):
-            raise TypeError("Both embedded_image and hidden_image must"
-                            "be numpy arrays.")
+            raise TypeError("Both embedded_image and hidden_image"
+                            "must be numpy arrays.")
 
         # Get resolutions of both images
         src_width, src_height, _ = self.get_resolution(hidden_image)
@@ -227,29 +228,32 @@ class Steganography:
         dst_width, _, _ = self.get_resolution(embedded_image)
 
         encoded_image = embedded_image.copy()
+
         for channel in range(self.depth):
             for pixel_position_src in range(src_resolution):
                 row_src, column_src = \
                     self.get_coordinates_from_position(pixel_position_src,
-                                                       src_width)
+                                                        src_width)
                 pixel_value_src = hidden_image[row_src, column_src, channel]
-                pixel_value_src = self.get_binary(pixel_value_src, self.pixel_size)
+                pixel_value_src = self.get_binary(pixel_value_src,
+                                                    self.pixel_size)
                 jump_size = pixel_position_src * self.pixel_size
 
                 for bit_position in range(self.pixel_size):
                     dst_position = self.header_size + jump_size + bit_position
                     row_dst, column_dst = \
                         self.get_coordinates_from_position(dst_position,
-                                                           dst_width)
+                                                            dst_width)
                     pixel_value_dst = embedded_image[row_dst,
-                                                     column_dst,
-                                                     channel]
+                                                        column_dst,
+                                                        channel]
                     pixel_value_dst = \
                         self.modify_last_bit(pixel_value_dst,
-                                             pixel_value_src[bit_position])
+                                                pixel_value_src[bit_position])
                     encoded_image[row_dst,
-                                  column_dst,
-                                  channel] = pixel_value_dst
+                                    column_dst,
+                                    channel] = pixel_value_dst
+
         return encoded_image
 
     def encode(self, embedded_image: np.ndarray,
@@ -336,11 +340,13 @@ class Steganography:
             raise ValueError("All parameters must be positive integers.")
 
         src_resolution = src_width * src_height
-        image = np.ndarray(shape=(src_height, src_width, self.depth), dtype=int)
+        shape = (src_height, src_width, self.depth)
+        image = np.ndarray(shape=shape, dtype=int)
 
         for channel in range(self.depth):
             for pixel_position in range(src_resolution):
-                pixel_position_dst = self.header_size + (pixel_position*self.pixel_size)
+                pixel_position_dst = pixel_position * self.pixel_size
+                pixel_position_dst += self.header_size
                 pixel_value_src = ""
                 for pixel_bit in range(self.pixel_size):
                     pixel_location = pixel_position_dst + pixel_bit
@@ -371,11 +377,9 @@ class Steganography:
         """
         dst_width = encoded_image.shape[1]
 
-        src_height = self.get_header(encoded_image, dst_width,
-                                     self.header_size, channel=0)
+        src_height = self.get_header(encoded_image, dst_width, channel=0)
 
-        src_width = self.get_header(encoded_image, dst_width,
-                                    self.header_size, channel=1)
+        src_width = self.get_header(encoded_image, dst_width, channel=1)
 
         output_image = self.get_hidden_image(embedded_image=encoded_image,
                                              src_width=src_width,
