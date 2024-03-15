@@ -233,26 +233,26 @@ class Steganography:
             for pixel_position_src in range(src_resolution):
                 row_src, column_src = \
                     self.get_coordinates_from_position(pixel_position_src,
-                                                        src_width)
+                                                       src_width)
                 pixel_value_src = hidden_image[row_src, column_src, channel]
                 pixel_value_src = self.get_binary(pixel_value_src,
-                                                    self.pixel_size)
+                                                  self.pixel_size)
                 jump_size = pixel_position_src * self.pixel_size
 
                 for bit_position in range(self.pixel_size):
                     dst_position = self.header_size + jump_size + bit_position
                     row_dst, column_dst = \
                         self.get_coordinates_from_position(dst_position,
-                                                            dst_width)
+                                                           dst_width)
                     pixel_value_dst = embedded_image[row_dst,
-                                                        column_dst,
-                                                        channel]
+                                                     column_dst,
+                                                     channel]
                     pixel_value_dst = \
                         self.modify_last_bit(pixel_value_dst,
-                                                pixel_value_src[bit_position])
+                                             pixel_value_src[bit_position])
                     encoded_image[row_dst,
-                                    column_dst,
-                                    channel] = pixel_value_dst
+                                  column_dst,
+                                  channel] = pixel_value_dst
 
         return encoded_image
 
