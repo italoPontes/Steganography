@@ -21,15 +21,8 @@ encoded_image_name = st.file_uploader("Choose the Steganography Image",
 if (encoded_image_name is not None):
     with st.spinner("Running... Please, wait a few seconds."):
         encoded_image = utils.load_image(encoded_image_name)
-
-        '''
+        
         retrieved_image = model.decode(encoded_image)
-        retrieved_image = cv2.cvtColor(retrieved_image, cv2.COLOR_RGB2BGR)
-        cv2.imwrite(output_file_name, retrieved_image)
 
-        with open(output_file_name, "rb") as file:
-            btn = st.download_button(label = "Download image",
-                                    data = file,
-                                    file_name = output_file_name,
-                                    mime = "image/png")
-        '''
+        st.markdown("Decoded image:")
+        st.image(retrieved_image)
