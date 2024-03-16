@@ -12,14 +12,14 @@ from steganography import Steganography
 
 OUTPUT_FILE_NAME = "encoded_image.png"
 ENCODE_DIAGRAM_FILE_NAME = "../data/encode_diagram.png"
+ENCODE_FULL_DIAGRAM_FILE_NAME = "../data/encode_full_diagram.png"
 
 model = Steganography()
 
 st.title("Steganography Demo")
-
 st.markdown("Breve texto 2")
-
 st.image(ENCODE_DIAGRAM_FILE_NAME)
+st.image(ENCODE_FULL_DIAGRAM_FILE_NAME)
 
 base_image_name = st.file_uploader("Choose the Base Image",
                                    accept_multiple_files=False)
