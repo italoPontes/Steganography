@@ -9,15 +9,15 @@ import streamlit as st
 import utils
 from steganography import Steganography
 
+utils.get_credentials()
+
 OUTPUT_FILE_NAME = "decode_image.png"
 DECODE_DIAGRAM_FILE_NAME = "../data/decode_diagram.png"
-DECODE_FULL_DIAGRAM_FILE_NAME = "../data/decode_full_diagram.png"
 
 model = Steganography()
 
 st.title("Steganography Demo")
 st.image(DECODE_DIAGRAM_FILE_NAME)
-st.image(DECODE_FULL_DIAGRAM_FILE_NAME)
 
 encoded_image_name = st.file_uploader("Choose the Steganography Image",
                                       accept_multiple_files=False)
