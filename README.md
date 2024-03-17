@@ -1,1 +1,1 @@
-[![Maintainability](https://api.codeclimate.com/v1/badges/seu-badge-id/maintainability)](https://codeclimate.com/github/seu-usuario/seu-repositorio/maintainability)
+[![flake8](https://img.shields.io/flake8/v/seu-username/seu-repositorio?label=flake8)](URL-DO-SEU-REPOSITORIO)
