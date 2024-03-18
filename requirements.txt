@@ -1,7 +1,6 @@
 streamlit==1.32.2
 numpy==1.24.2
 ffmpeg
-libsm6
 libxext6
 opencv-python==4.5.5.64
 libgl1
