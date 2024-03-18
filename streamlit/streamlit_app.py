@@ -2,17 +2,18 @@
 Docstring
 """
 import streamlit as st
+import base64 
 
 import sys
-sys.path.append("../src/")
+sys.path.append("src")
 import utils
 
 st.set_page_config(layout="wide")
 
 utils.get_credentials()
 
-ENCODE_FULL_DIAGRAM_FILE_NAME = "../data/encode_full_diagram.png"
-DECODE_FULL_DIAGRAM_FILE_NAME = "../data/decode_full_diagram.png"
+ENCODE_FULL_DIAGRAM_FILE_NAME = "data/encode_full_diagram.png"
+DECODE_FULL_DIAGRAM_FILE_NAME = "data/decode_full_diagram.png"
 
 st.page_link("streamlit_app.py", label="Home", icon="🏠")
 
