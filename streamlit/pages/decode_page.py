@@ -11,8 +11,7 @@ from steganography import Steganography
 
 utils.get_credentials()
 
-OUTPUT_FILE_NAME = "decode_image.png"
-DECODE_DIAGRAM_FILE_NAME = "data/Diagrams/decode_diagram.png"
+DECODE_DIAGRAM_FILE_NAME = "data/Diagrams/decode.png"
 
 model = Steganography()
 

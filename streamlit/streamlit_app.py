@@ -12,8 +12,8 @@ st.set_page_config(layout="wide")
 
 utils.get_credentials()
 
-ENCODE_FULL_DIAGRAM_FILE_NAME = "data/Diagrams/encode_full_diagram.png"
-DECODE_FULL_DIAGRAM_FILE_NAME = "data/Diagrams/decode_full_diagram.png"
+ENCODE_FULL_DIAGRAM_FILE_NAME = "data/Diagrams/full_encode.png"
+DECODE_FULL_DIAGRAM_FILE_NAME = "data/Diagrams/full_decode.png"
 
 st.page_link("streamlit_app.py", label="Home", icon="🏠")
 

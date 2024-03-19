@@ -12,24 +12,24 @@ from steganography import Steganography
 
 utils.get_credentials()
 
-OUTPUT_FILE_NAME = "data/encoded_image.png"
-ENCODE_DIAGRAM_FILE_NAME = "data/Diagrams/encode_diagram.png"
+OUTPUT_FILE_NAME = "data/steganography_image.png"
+ENCODE_DIAGRAM_FILE_NAME = "data/Diagrams/encode.png"
 
 model = Steganography()
 
 st.title("Steganography Demo")
 st.image(ENCODE_DIAGRAM_FILE_NAME)
 
-base_image_name = st.file_uploader("Choose the Base Image",
-                                   accept_multiple_files=False)
+secret_image_name = st.file_uploader("Choose the Secret Image",
+                                     accept_multiple_files=False)
 
 cover_image_name = st.file_uploader("Choose the Cover Image",
                                     accept_multiple_files=False)
 
-if (base_image_name is not None) and (cover_image_name is not None):
+if (secret_image_name is not None) and (cover_image_name is not None):
     with st.spinner("Running... Please, wait a few seconds."):
         embedded_image = utils.load_image(cover_image_name)
-        hidden_image = utils.load_image(base_image_name)
+        hidden_image = utils.load_image(secret_image_name)
 
         encoded_image = model.encode(embedded_image, hidden_image)
         encoded_image = cv2.cvtColor(encoded_image, cv2.COLOR_RGB2BGR)
