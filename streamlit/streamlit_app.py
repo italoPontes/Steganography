@@ -20,9 +20,9 @@ st.page_link("streamlit_app.py", label="Home", icon="🏠")
 left_column, right_column = st.columns(2)
 
 with left_column:
-    st.page_link("pages/encode_page.py", label="Encode Page", icon="1️⃣")
+    st.page_link("pages/1_encode_page.py", label="Encode Page", icon="1️⃣")
     st.image(ENCODE_FULL_DIAGRAM_FILE_NAME)
 
 with right_column:
-    st.page_link("pages/decode_page.py", label="Decode Page", icon="2️⃣")
+    st.page_link("pages/2_decode_page.py", label="Decode Page", icon="2️⃣")
     st.image(DECODE_FULL_DIAGRAM_FILE_NAME)
