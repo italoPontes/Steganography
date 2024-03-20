@@ -1,6 +1,6 @@
 # Steganography From Scratch
 
-Logo
+<img src="data/Diagrams/steganography_logo.png" width="900">
 
 [![flake8](https://img.shields.io/badge/flake8-passing-brightgreen)](https://github.com/italoPontes/Steganography)
 
