@@ -1,11 +1,11 @@
-## Streamlit/streamlit_app.py
+## streamlit_app.py
 
 <img src="../data/Streamlit/Streamlit-main.png" width="900">
 
-### Streamlit/pages/Streamlit_encode.py
+### pages/Streamlit_encode.py
 
 <img src="../data/Streamlit/Streamlit-encode.png" width="900">
 
-### Streamlit/pages/Streamlit_decode.py
+### pages/Streamlit_decode.py
 
 <img src="../data/Streamlit/Streamlit-decode.png" width="900">
