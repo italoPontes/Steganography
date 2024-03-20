@@ -1,12 +1,16 @@
-# Steganography From Scratch
-
 <img src="data/Diagrams/steganography_logo.png" width="900">
+
+## Implementing Steganography from scratch using Python
 
 [![flake8](https://img.shields.io/badge/flake8-passing-brightgreen)](https://github.com/italoPontes/Steganography)
 
 What is Steganography?
 
 # Quick install
+
+```
+pip install -r requirements.txt
+```
 
 # Who am I?
 
