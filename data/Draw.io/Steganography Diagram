@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-03-19T20:19:02.008Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="DM3pZ5kFabwzvWN7LdU7" version="24.0.7" type="github" pages="6">
+<mxfile host="app.diagrams.net" modified="2024-03-20T13:56:05.804Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="1T5eb2hEpq9lKSAz1UdO" version="24.0.7" type="github" pages="6">
   <diagram name="Bits Variations - Colors" id="nwh_sp2lMPmeImBYV837">
     <mxGraphModel dx="1234" dy="1463" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -1901,10 +1901,19 @@
     </mxGraphModel>
   </diagram>
   <diagram id="qq8dMGM7a79_EJByGMt5" name="Logo">
-    <mxGraphModel dx="1234" dy="1463" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="573" dy="697" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="SC5RSxZjxyTvxbVL-pYY-4" value="&lt;b style=&quot;font-family: Verdana; text-wrap: wrap; font-size: 72px;&quot;&gt;STEGANOGRAPHY&lt;/b&gt;" style="text;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;labelBackgroundColor=none;fontColor=#007FFF;labelBorderColor=none;textShadow=0;html=1;textOpacity=30;" vertex="1" parent="1">
+          <mxGeometry x="849" y="57" width="750" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="SC5RSxZjxyTvxbVL-pYY-3" value="&lt;b style=&quot;font-family: Verdana; text-wrap: wrap; font-size: 72px;&quot;&gt;&lt;font color=&quot;#00ff00&quot;&gt;STEGANOGRAPHY&lt;/font&gt;&lt;/b&gt;" style="text;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;labelBackgroundColor=none;fontColor=default;labelBorderColor=none;textShadow=0;html=1;textOpacity=70;rounded=0;shadow=0;glass=0;perimeterSpacing=0;absoluteArcSize=0;noLabel=0;portConstraintRotation=0;connectable=1;snapToPoint=0;recursiveResize=1;collapsible=0;metaEdit=0;backgroundOutline=0;" vertex="1" parent="1">
+          <mxGeometry x="845" y="54" width="750" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="SC5RSxZjxyTvxbVL-pYY-2" value="&lt;b style=&quot;font-family: Verdana; text-wrap: wrap; font-size: 72px;&quot;&gt;STEGANOGRAPHY&lt;/b&gt;" style="text;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;labelBackgroundColor=none;fontColor=#FF0000;labelBorderColor=none;textShadow=0;html=1;" vertex="1" parent="1">
+          <mxGeometry x="840" y="50" width="750" height="100" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
