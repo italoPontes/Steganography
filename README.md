@@ -4,22 +4,46 @@
 
 [![flake8](https://img.shields.io/badge/flake8-passing-brightgreen)](https://github.com/italoPontes/Steganography)
 
-What is Steganography?
+
+This repository presents a robust implementation of steganography techniques designed specifically for embedding sensitive information within images using the Python programming language. In an era characterized by pervasive cybersecurity threats, safeguarding personal data, such as family photographs, from potential unauthorized access is of utmost importance.
+
+Consider the following scenario: you possess a directory on your computer containing treasured family photographs, and you seek to shield them from unauthorized viewing.
+
+Traditional approaches entail certain limitations:
+
+- __Conventional Storage__: Placing images in easily accessible directories on your computer renders them susceptible to discovery by malicious actors.
+
+- __Encryption__: Applying password-based encryption to images may inadvertently draw attention to their presence, piquing the curiosity of adversaries and potentially inviting further attempts to breach security measures.
+
+- __Steganographic Solution__: Utilizing steganography presents a discreet alternative. By embedding important images within seemingly innocuous ones, such as images resembling movie covers, the likelihood of detection by adversaries is significantly diminished. Moreover, augmenting this approach with additional encryption, bolstered by passwords, enhances the security of the steganographically concealed images.
+
+In essence, this repository offers a comprehensive toolkit for leveraging steganography in image data to enhance privacy and confidentiality in digital environments. Through its clear and concise documentation and illustrative examples, users gain insights into implementing and utilizing steganographic techniques effectively for safeguarding sensitive information.
 
 # Quick install
+
+For a quick installation, follow these simple steps:
+
+1. Clone this repository to your local environment.
+```
+git clone https://github.com/italoPontes/Steganography/
+```
+
+2. Navigate to the project directory.
+```
+cd Steganography
+```
+
+3. Run the command `pip install -r requirements.txt` to install all the necessary dependencies listed in the `requirements.txt` file.
 
 ```
 pip install -r requirements.txt
 ```
-- numpy==1.26.4
-- opencv-python-headless==4.9.0.80
-- Pillow==10.2.0
 
-- streamlit==1.32.0
+4. Once the installation is complete, you're ready to start.
 
 # How to use?
 
-<img src="data/Diagrams/encode-example.png" alt="Encode Demonstration">
+## Encode
 
 ```
 python how-to-use.py encode
@@ -28,14 +52,19 @@ python how-to-use.py encode
 -output_image data/steganography-image.png
 ```
 
+<img src="data/Diagrams/encode-example.png" alt="Encode Demonstration">
 
-<img src="data/Diagrams/decode-example.png" alt="Decode Demonstration">
+
+## Decode
 
 ```
 python how-to-use.py decode
 -steganography_image data/steganography-image.png
 -secret_image data/retrieved.png
 ```
+
+<img src="data/Diagrams/decode-example.png" alt="Decode Demonstration">
+
 
 # Who am I?
 
