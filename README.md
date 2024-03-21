@@ -4,6 +4,9 @@
 
 [![flake8](https://img.shields.io/badge/flake8-passing-brightgreen)](https://github.com/italoPontes/Steganography)
 
+__Try on:__
+
+https://steganography.streamlit.app/
 
 This repository presents a robust implementation of steganography techniques designed specifically for embedding sensitive information within images using the Python programming language. In an era characterized by pervasive cybersecurity threats, safeguarding personal data, such as family photographs, from potential unauthorized access is of utmost importance.
 
@@ -19,7 +22,9 @@ Traditional approaches entail certain limitations:
 
 In essence, this repository offers a comprehensive toolkit for leveraging steganography in image data to enhance privacy and confidentiality in digital environments. Through its clear and concise documentation and illustrative examples, users gain insights into implementing and utilizing steganographic techniques effectively for safeguarding sensitive information.
 
-# Quick install
+# How to use?
+
+## Quick install
 
 For a quick installation, follow these simple steps:
 
@@ -40,8 +45,6 @@ pip install -r requirements.txt
 ```
 
 4. Once the installation is complete, you're ready to start.
-
-# How to use?
 
 ## Encode
 
