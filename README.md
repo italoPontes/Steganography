@@ -14,6 +14,7 @@ pip install -r requirements.txt
 - numpy==1.26.4
 - opencv-python-headless==4.9.0.80
 - Pillow==10.2.0
+
 - streamlit==1.32.0
 
 # How to use?
@@ -21,14 +22,19 @@ pip install -r requirements.txt
 <img src="data/Diagrams/encode-example.png" alt="Encode Demonstration">
 
 ```
-python how-to-use.py encode -secret_image data/secret-image.jpg -cover_image data/Monalisa.png -output_image data/steganography-image.png
+python how-to-use.py encode
+-secret_image data/secret-image.jpg
+-cover_image data/Monalisa.png
+-output_image data/steganography-image.png
 ```
 
 
 <img src="data/Diagrams/decode-example.png" alt="Decode Demonstration">
 
 ```
-python how-to-use.py decode -steganography_image data/steganography-image.png -secret_image data/retrieved.png
+python how-to-use.py decode
+-steganography_image data/steganography-image.png
+-secret_image data/retrieved.png
 ```
 
 # Who am I?
