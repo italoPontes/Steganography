@@ -1,5 +1,6 @@
 """
-Docstring
+This script sets up a Streamlit app for encoding and
+decoding images using steganography.
 """
 import streamlit as st
 import base64 
