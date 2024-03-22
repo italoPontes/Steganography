@@ -33,8 +33,8 @@ def get_credentials():
     a photo, name, and links to LinkedIn and GitHub,
     in the Streamlit sidebar.
     """
-    linkedin_photo = "data/logos/Linkedin-logo.png"
-    github_photo = "data/logos/Github-logo.png"
+    linkedin_photo = "data/Logos/Linkedin-logo.png"
+    github_photo = "data/Logos/Github-logo.png"
     personal_photo = "data/Italo.jpeg"
     github = "github.com/italoPontes/Steganography"
     github_url = "https://github.com/italoPontes/Steganography/"
