@@ -45,30 +45,6 @@ class Steganography:
 
         return row, column
 
-    def from_binary_to_decimal(self, binary: str = '0') -> int:
-        """
-        Converts binary number to decimal integer.
-
-        Args:
-            binary (str): Binary string.
-
-        Returns:
-            int: Decimal integer.
-
-        Examples:
-            >>> from_binary_to_decimal('00000001')
-            1
-            >>> from_binary_to_decimal('00001010')
-            10
-            >>> from_binary_to_decimal('01100100')
-            100
-        """
-        decimal = 0
-        for i, bit in enumerate(reversed(binary)):
-            if bit == '1':
-                decimal += 2 ** i
-        return decimal
-
     def get_binary(self, pixel_value: int = 0,
                    size: int = 8) -> str:
         """
@@ -119,7 +95,7 @@ class Steganography:
         if new_last_bit not in {0, 1}:
             return pixel_value
         output_value = (pixel_value & -2) | (new_last_bit & 1)
-        return output_value
+        return output_value 
 
     def get_resolution(self, image: np.ndarray):
         """
@@ -312,7 +288,7 @@ class Steganography:
             last_bit = str(pixel_value % 2)
             dimension += last_bit
 
-        dimension = self.from_binary_to_decimal(dimension)
+        dimension = int(dimension, 2)
         return dimension
 
     def get_hidden_image(self, embedded_image: np.ndarray,
@@ -357,7 +333,7 @@ class Steganography:
                         embedded_image[dst_row, dst_column, channel]
                     last_bit = str(pixel_value_dst % 2)
                     pixel_value_src += last_bit
-                pixel_value_src = self.from_binary_to_decimal(pixel_value_src)
+                pixel_value_src = int(pixel_value_src, 2)
                 src_row, src_column = \
                     self.get_coordinates_from_position(pixel_position,
                                                        src_width)
