@@ -95,7 +95,7 @@ class Steganography:
         if new_last_bit not in {0, 1}:
             return pixel_value
         output_value = (pixel_value & -2) | (new_last_bit & 1)
-        return output_value 
+        return output_value
 
     def get_resolution(self, image: np.ndarray):
         """
